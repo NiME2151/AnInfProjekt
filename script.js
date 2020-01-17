@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("div").click(function () {
+    $("section").click(function () {
         $(this).hide();
     })
 })

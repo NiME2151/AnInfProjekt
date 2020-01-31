@@ -1,20 +1,14 @@
 $(document).ready(function () {
 
-
-
-
-
-
     $(document).keydown(function(e) { //ArrowDown
         if (e.which == 40) {
-
             $("div").animate({
                 bottom: '-=25'
             }, 200, function() {
             });
         }
     });
-    $(document).keyDown(function(e) { //ArrowUp
+    $(document).keydown(function(e) { //ArrowUp
         switch (e.which) {
             case 39:
                 $("section div").animate({
@@ -41,19 +35,11 @@ $(document).ready(function () {
         }
     });
 
-
-    /*
-    $("section").click(function () {
-
-        $(this).hide();
-    })
-    */
     level1.forEach(line => {
         line.split('').forEach(sign => {
             $("section").append(`<div class='${signs[sign]}'></div>`)
         });
         $("section").append("<div class='breaker'></div>")
     });
-*/
 });
 

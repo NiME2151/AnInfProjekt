@@ -21,7 +21,7 @@ section div.floor {
 }
 
 section div.player {
-    background-color: skyblue;
+    background-color: transparent;
     position: relative;
 }
 

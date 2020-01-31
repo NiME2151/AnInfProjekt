@@ -32,12 +32,5 @@ $(document).ready(function () {
             });
         }
     });
-
-    level1.forEach(line => {
-        line.split('').forEach(sign => {
-            $("section").append(`<div class='${signs[sign]}'></div>`)
-        });
-        $("section").append("<div class='breaker'></div>")
-    });
 });
 

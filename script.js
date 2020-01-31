@@ -1,10 +1,16 @@
 $(document).ready(function () {
 
-    $(document).keydown(function(e) { //ArrowDown
+    $('#health').click(function () {
+        oldVal = $('#health').val();
+        newVal = oldVal - 10;
+        $('#health').val(newVal);
+    });
+
+    $(document).keydown(function (e) { //ArrowDown
         if (e.which == 40) {
             $("div").animate({
                 bottom: '-=25'
-            }, 200, function() {
+            }, 200, function () {
             });
         }
     });
@@ -20,7 +26,7 @@ $(document).ready(function () {
         if (e.which == 37) {
             $("div").animate({
                 left: '-=25'
-            }, 200, function() {
+            }, 200, function () {
             });
         }
     });

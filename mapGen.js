@@ -1,7 +1,8 @@
 let signs = {
     '#':  'wall',
     ' ': 'floor',
-    'p': 'player'
+    'p': 'player',
+    'e': 'enemy'
 }
 
 const level1 = [
@@ -12,7 +13,7 @@ const level1 = [
     '#            #',
     '########     #',
     '#            #',
-    '#            #',
+    '#       e    #',
     '##############'
 ];
 let counter = 0;

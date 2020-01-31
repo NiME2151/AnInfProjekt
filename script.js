@@ -34,5 +34,9 @@ $(document).ready(function () {
             });
         }
     });
+
+    $("div").click(function (event) {
+        alert($(this).attr('id'));
+    })
 });
 

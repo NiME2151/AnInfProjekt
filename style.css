@@ -25,12 +25,12 @@ section div.floor {
 section div.player {
     background-color: transparent;
     position: relative;
-    background-image: url("textures/jotaro.png");
+    background-image: url("textures/texture_player.gif");
 }
 
 section div.enemy {
     background-color: transparent;
-    background-image: url("textures/enemyStand.png");
+    background-image: url("textures/texture_enemyStand.png");
 }
 
 

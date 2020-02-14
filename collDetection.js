@@ -1,14 +1,20 @@
-function collDetect() {
-    $('.enemy').each(function(){
-        if(recthit('.enemy', '.player')){
-            console.log("hit");
-            return true;
-        } else {
-            console.log("no hit");
-            return false;
-        }
-    });
+// function collDetect() {
+//     $('.enemy').each(function(){
+//         if(recthit('.enemy', '.player')){
+//             console.log("hit");
+//         } else {
+//             console.log("no hit");
+//         }
+//     });
+// }
+
+function healthDecrease() {
+    oldVal = $('#health').val();
+    newVal = oldVal - 10;
+    $('#health').val(newVal);
+    return newVal;
 }
+
 
 const speed = 100;
 function recthit(rectone, player, direction){
@@ -45,6 +51,11 @@ function recthit(rectone, player, direction){
         r1x+r1w < r2x ){
         return false;
     }else{
+        // If health === 0 game restarts
+        if (healthDecrease() === 0) {
+            alert("GAME OVER")
+            location.reload(true);
+        }
         return true;
     }
 

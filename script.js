@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    function healthDecrease() {
+        oldVal = $('#health').val();
+        newVal = oldVal - 10;
+        $('#health').val(newVal);
+    }
+
     $('#health').click(function () {
         oldVal = $('#health').val();
         newVal = oldVal - 10;
@@ -8,7 +14,11 @@ $(document).ready(function () {
 
     let speed = '100';
     $(document).keyup(function (e) {
-        collDetect();
+        // collDetect();
+
+        $('.enemy').each(function () {
+
+        });
 
         // ArrowDown
         if (e.which === 40) {
@@ -18,7 +28,6 @@ $(document).ready(function () {
                 }, 200, function () {
                 });
             }
-
         }
 
         // ArrowUp
@@ -29,7 +38,6 @@ $(document).ready(function () {
                 }, 200, function () {
                 });
             }
-
         }
 
         // ArrowLeft
@@ -40,7 +48,6 @@ $(document).ready(function () {
                 }, 200, function () {
                 });
             }
-
         }
 
         //ArrowRight

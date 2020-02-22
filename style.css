@@ -30,7 +30,7 @@ section div.player {
 
 section div.enemy {
     background-color: transparent;
-    background-image: url("textures/texture_enemyStand.png");
+    background-image: url("textures/texture_enemy.png");
 }
 
 

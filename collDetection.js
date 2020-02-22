@@ -22,7 +22,7 @@ function recthit(rectone, player, direction) {
     // var r1 = $(rectone);
     var r2 = $(player);
     $(".enemy").each(function (index) {
-        console.table($(this).offset().left);
+        // console.table($(this).offset().left);
 
         var r1x = $(this).offset().left;
         var r1w = $(this).width() - 1;
@@ -34,18 +34,18 @@ function recthit(rectone, player, direction) {
         var r2y = r2.offset().top;
         var r2h = r2.height() - 1;
 
-        if (direction === 'down') {
-            r2y += speed;
-        }
-        if (direction === 'up') {
-            r2y -= speed;
-        }
-        if (direction === 'left') {
-            r2x -= speed;
-        }
-        if (direction === 'right') {
-            r2x += speed;
-        }
+        // if (direction === 'down') {
+        //     r2y += speed;
+        // }
+        // if (direction === 'up') {
+        //     r2y -= speed;
+        // }
+        // if (direction === 'left') {
+        //     r2x -= speed;
+        // }
+        // if (direction === 'right') {
+        //     r2x += speed;
+        // }
 
         if (r1y + r1h < r2y ||
             r1y > r2y + r2h ||
@@ -57,7 +57,20 @@ function recthit(rectone, player, direction) {
                 alert("GAME OVER")
                 location.reload(true);
             }
+            else if ($(this).attr('id') === '66') {
+                $(this).attr("class", "floor")
+                healthDecrease();
+            }
+            else if ($(this).attr('id') === '106') {
+                $(this).attr("class", "floor")
+                healthDecrease();
+            }
+            else if ($(this).attr('id') === '87') {
+                $(this).attr("class", "floor")
+                healthDecrease();
+            }
             coll = true;
+            
         }
     });
     return coll;

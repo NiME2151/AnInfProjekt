@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    function healthDecrease() {
-        oldVal = $('#health').val();
-        newVal = oldVal - 10;
-        $('#health').val(newVal);
-    }
+    // function healthDecrease() {
+    //     oldVal = $('#health').val();
+    //     newVal = oldVal - 10;
+    //     $('#health').val(newVal);
+    // }
 
     $('#health').click(function () {
         oldVal = $('#health').val();
@@ -14,7 +14,6 @@ $(document).ready(function () {
 
     let speed = '100';
     $(document).keyup(function (e) {
-        // collDetect();
 
         $('.enemy').each(function () {
 
@@ -62,7 +61,7 @@ $(document).ready(function () {
     });
 
     $("div").click(function (event) {
-        alert($(this).attr('id'));
+        alert($(this).attr('id') + "\n" + $(this).attr('class'));
     });
 });
 

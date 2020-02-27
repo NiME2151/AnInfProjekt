@@ -15,13 +15,21 @@ function healthDecrease() {
     return newVal;
 }
 
+function healthIncrease() {
+    oldVal = $('#health').val();
+    newVal = oldVal + 25;
+    $('#health').val(newVal);
+    alert($("#health").attr('max'));
+    return newVal;
+}
+
 
 const speed = 100;
 function recthit(rectone, player, direction) {
     let coll = false;
     // var r1 = $(rectone);
     var r2 = $(player);
-    $(".enemy").each(function (index) {
+    $.each($('.enemy'), function (index) {
         // console.table($(this).offset().left);
 
         var r1x = $(this).offset().left;
@@ -57,20 +65,24 @@ function recthit(rectone, player, direction) {
                 alert("GAME OVER")
                 location.reload(true);
             }
+            else if ($(this).attr('id') === '24') {
+                $(this).attr("class", "floor");
+                healthIncrease();
+            }
             else if ($(this).attr('id') === '66') {
-                $(this).attr("class", "floor")
+                $(this).attr("class", "floor");
                 healthDecrease();
             }
             else if ($(this).attr('id') === '106') {
-                $(this).attr("class", "floor")
+                $(this).attr("class", "floor");
                 healthDecrease();
             }
             else if ($(this).attr('id') === '87') {
-                $(this).attr("class", "floor")
+                $(this).attr("class", "floor");
                 healthDecrease();
             }
             coll = true;
-            
+
         }
     });
     return coll;

@@ -2,12 +2,13 @@ let signs = {
     '#': 'wall',
     ' ': 'floor',
     'p': 'player',
-    'e': 'enemy'
+    'e': 'enemy',
+    'h': 'hpUpPotion'
 }
 
 const level1 = [
     '##############',
-    '#  p  #      #',
+    '#  p  #   h  #',
     '#     #  #####',
     '#   ###      #',
     '#         e  #',

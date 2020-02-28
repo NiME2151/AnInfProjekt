@@ -13,7 +13,7 @@ const level1 = [
     '#   ###      #',
     '#         e  #',
     '########     #',
-    '#  e         #',
+    '#  e       e #',
     '#       e    #',
     '##############'
 ];
@@ -40,6 +40,7 @@ level1.forEach(line => {
 });
 
 function loadMap(level) {
+    counter = 0;
     level.forEach(line => {
         line.split('').forEach(sign => {
             $("section").append(`<div id="${counter}" class='${signs[sign]}'></div>`)

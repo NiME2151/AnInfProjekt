@@ -1,10 +1,22 @@
 function healthChange(change) {
     if (change === 'p') {
-        $('#health').val($('#health').val() + 25);
+        $('#health').val($('#health').val() + 50);
     }
     else if (change === 'n') {
-        $('#health').val($('#health').val() - 50);
+        $('#health').val($('#health').val() - 25);
     }
+}
+
+let level = 1;
+
+let enemys = {
+    1: [66, 87, 106, 95],
+    2: [75, 94, 65]
+};
+
+let pots = {
+    1: [24],
+    2: [108]
 }
 
 const speed = 100;
@@ -32,27 +44,27 @@ function recthit(rectone, player, direction) {
             r1x + r1w < r2x) {
             coll = false;
         } else {
-            if (healthChange() === 0) {
-                alert("GAME OVER")
-                location.reload(true);
-            }
-            else if ($(this).attr('id') === '66') {
+            if (enemys[level].includes(parseInt($(this).attr('id')))) {
                 $(this).attr("class", "floor");
                 healthChange('n');
-            }
-            else if ($(this).attr('id') === '106') {
-                $(this).attr("class", "floor");
-                healthChange('n');
-            }
-            else if ($(this).attr('id') === '87') {
-                $(this).attr("class", "floor");
-                healthChange('n');
+                if ($('#health').attr('value') === '0') {
+                    alert("GAME OVER")
+                    location.reload();
+                }
             }
             coll = true;
             if (!$('div').hasClass('enemy')) {
-                $('section').empty();
-                $.getScript('collDetection.js')
-                loadMap(level2);
+                if (level = 1) {
+                    $('section div').remove();
+                    loadMap(level2);
+                    level = 2;
+                }
+                else {
+                    alert("Game durchgespielt");
+                    $('section div').remove();
+                    loadMap(level1)
+                    level = 1;
+                }
             }
         }
     });
@@ -75,7 +87,7 @@ function recthit(rectone, player, direction) {
             r1x + r1w < r2x) {
             coll = false;
         } else {
-            if ($(this).attr('id') === '24' && $('#health').attr('value') !== '100') {
+            if (pots[level].includes(parseInt($(this).attr('id'))) && $('#health').attr('value') !== '100') {
                 healthChange('p');
                 $(this).attr("class", "floor");
             }

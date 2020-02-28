@@ -1,16 +1,9 @@
 $(document).ready(function () {
-
-    // function healthDecrease() {
+    // $('#health').click(function () {
     //     oldVal = $('#health').val();
     //     newVal = oldVal - 10;
     //     $('#health').val(newVal);
-    // }
-
-    $('#health').click(function () {
-        oldVal = $('#health').val();
-        newVal = oldVal - 10;
-        $('#health').val(newVal);
-    });
+    // });
 
     let speed = '100';
     $(document).keyup(function (e) {
@@ -55,7 +48,7 @@ $(document).ready(function () {
         }
     });
 
-    $("div").click(function (event) {
+    $('div').click(function () {
         alert($(this).attr('id') + "\n" + $(this).attr('class') + "\n" + $('#health').attr('value'));
     });
 

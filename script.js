@@ -14,14 +14,9 @@ $(document).ready(function () {
 
     let speed = '100';
     $(document).keyup(function (e) {
-
-        $('.enemy').each(function () {
-
-        });
-
         // ArrowDown
         if (e.which === 40) {
-            if (!recthit('.enemy', '.player', 'down')) {
+            if (!recthit('.wall', '.player', 'down')) {
                 $(".player").animate({
                     bottom: '-=' + speed
                 }, 200, function () {
@@ -31,7 +26,7 @@ $(document).ready(function () {
 
         // ArrowUp
         if (e.which === 38) {
-            if (!recthit('.enemy', '.player', 'up')) {
+            if (!recthit('.wall', '.player', 'up')) {
                 $(".player").animate({
                     bottom: '+=' + speed
                 }, 200, function () {
@@ -41,7 +36,7 @@ $(document).ready(function () {
 
         // ArrowLeft
         if (e.which === 37) {
-            if (!recthit('.enemy', '.player', 'left')) {
+            if (!recthit('.wall', '.player', 'left')) {
                 $(".player").animate({
                     left: '-=' + speed
                 }, 200, function () {
@@ -51,7 +46,7 @@ $(document).ready(function () {
 
         //ArrowRight
         if (e.which === 39) {
-            if (!recthit('.enemy', '.player', 'right')) {
+            if (!recthit('.wall', '.player', 'right')) {
                 $(".player").animate({
                     left: '+=' + speed
                 }, 200, function () {
@@ -61,7 +56,15 @@ $(document).ready(function () {
     });
 
     $("div").click(function (event) {
-        alert($(this).attr('id') + "\n" + $(this).attr('class'));
+        alert($(this).attr('id') + "\n" + $(this).attr('class') + "\n" + $('#health').attr('value'));
     });
+
+    // $('div').each(function () {
+    //     if ($(this).hasClass('.enemy')) {
+    //     }
+    //     else {
+    //         location.reload();
+    //     }
+    // });
 });
 

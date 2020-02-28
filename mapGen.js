@@ -17,6 +17,19 @@ const level1 = [
     '#       e    #',
     '##############'
 ];
+
+const level2 = [
+    '##############',
+    '#            #',
+    '#            #',
+    '######       #',
+    '#    #   e   #',
+    '#    e       #',
+    '#    #####e###',
+    '#    p #  h  #',
+    '##############'
+];
+
 let counter = 0;
 level1.forEach(line => {
     line.split('').forEach(sign => {
@@ -25,3 +38,13 @@ level1.forEach(line => {
     });
     $("section").append("<div class='breaker'></div>")
 });
+
+function loadMap(level) {
+    level.forEach(line => {
+        line.split('').forEach(sign => {
+            $("section").append(`<div id="${counter}" class='${signs[sign]}'></div>`)
+            counter++;
+        });
+        $("section").append("<div class='breaker'></div>")
+    });
+}
